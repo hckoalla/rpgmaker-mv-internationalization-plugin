@@ -1,0 +1,1 @@
+# rpgmaker-mv-internationalization-plugin
