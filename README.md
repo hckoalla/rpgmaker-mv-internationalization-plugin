@@ -1,4 +1,4 @@
-# RPG Maker MV Internationalization - plugin
+# RPG Maker MV Internationalization - Plugin
 
 ## Description
 
