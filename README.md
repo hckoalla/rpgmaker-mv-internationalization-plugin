@@ -9,6 +9,11 @@ This plugin introduces internationalization (i18n) capabilities to RPG Maker MV,
 - Load translations dynamically based on the selected language.
 - Use script calls to display translated text in events.
 - Change the language during gameplay with a simple script call.
+- **New:** Adds a language selection option to the title screen.
+- **New:** Adds a language selection option to the in-game menu.
+- **New:** Support for switching languages at runtime.
+- **New:** Players can select their preferred language at any time.
+- **New:** Save language preferences across sessions by storing the selected language in `languageConfig.json`.
 
 ## Installation
 
@@ -18,9 +23,21 @@ This plugin introduces internationalization (i18n) capabilities to RPG Maker MV,
 4. Open RPG Maker MV and go to the Plugin Manager.
 5. Add the `Internationalization` plugin to your project.
 
+## New Plugins
+
+- **InternationalizationMainMenu.js**  
+  Adds a language selection option to the title screen, allowing players to choose their language before starting the game.
+
+- **InternationalizationMenu.js**  
+  Adds a language selection option within the in-game menu, allowing players to change the language during gameplay.
+
+- **Internationalization.js**  
+  This is the core plugin responsible for internationalization, offering various methods for loading and saving translations.
+
 ## JSON File Structure
 
-Each JSON file should contain key-value pairs for the text you want to translate.  
+Each JSON file should contain key-value pairs for the text you want to translate.
+
 Example:
 
 **`locales/en.json`**:
@@ -31,7 +48,8 @@ Example:
 }
 ```
 
-locales/pt.json:
+**`locales/pt.json:`**:
+
 ```json
 {
   "greeting": "Olá, aventureiro!",
@@ -39,19 +57,16 @@ locales/pt.json:
 }
 ```
 
-## Usage
-
-## Script Calls
-
-- Display Translated Text:
+Usage
+Script Calls
+Display Translated Text
 Use i18n.translate("key") in events to display the translated text.
 Example:
 
-```javascript
+javascript
+Copiar código
 $gameMessage.add(i18n.translate("greeting"));
-```
-
-- Change Language:
+Change Language
 Use i18n.load("languageCode") to switch the language.
 Example:
 
@@ -69,18 +84,30 @@ var language = systemLanguage.startsWith("pt") ? "pt" : "en";
 i18n.load(language);
 ```
 
-# Error Handling
+## Adding New Languages
 
-- If a key is missing in the translation file, the key name will be displayed as a fallback.
-- Ensure that the JSON files are properly formatted and located in the locales folder.
+To add a new language:
 
-## Future Integration
-This plugin can be enhanced further with features such as:
+- Create a new JSON file in the locales directory (e.g., locales/es.json for Spanish).
+- Add the translations for that language in the new file.
+- The game will automatically detect and load the language based on the selected code.
+- 
+Example:
 
-- Integration with in-game menus for language selection.
-- Support for text placeholders and pluralization.
+```json
+{
+  "greeting": "¡Hola, aventurero!",
+  "farewell": "Adiós, valiente."
+}
+```
+
+## Error Handling
+
+If a key is missing in the translation file, the key name will be displayed as a fallback.
+Ensure that the JSON files are properly formatted and located in the locales folder.
 
 ## License
+
 This plugin is released under the Apache License 2.0. You are free to use, modify, and distribute this plugin, provided that you comply with the terms of the license. This includes maintaining the copyright notice and the license text in all copies or substantial portions of the software.
 
 **Credit:** hckoalla
