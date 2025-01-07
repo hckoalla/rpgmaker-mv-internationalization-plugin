@@ -34,6 +34,10 @@ This plugin introduces internationalization (i18n) capabilities to RPG Maker MV,
 - **Internationalization.js**  
   This is the core plugin responsible for internationalization, offering various methods for loading and saving translations.
 
+## Demo
+
+If you're looking for a demonstration of this project in action, [visit our repository on GitHub](https://github.com/hckoalla/rpgmaker-mv-internationalization-demo).
+
 ## JSON File Structure
 
 Each JSON file should contain key-value pairs for the text you want to translate.
